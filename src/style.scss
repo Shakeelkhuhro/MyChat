@@ -102,7 +102,8 @@
           display: flex;
           grid-area: 10px;
 
-          .img, .profile {
+          .img,
+          .profile {
             background-color: #ddddf7;
             height: 24px;
             width: 24px;
@@ -110,7 +111,7 @@
             object-fit: cover;
           }
 
-          button{
+          button {
             background-color: #5d5b8d;
             color: #ddddf7;
             font-size: 10px;
@@ -120,9 +121,184 @@
           }
         }
       }
+      .search {
+        border-bottom: 1px solid gray;
+
+        .searchForm {
+          padding: 10px;
+
+          input {
+            background-color: transparent;
+            border: none;
+            color: white;
+            outline: none;
+
+            &::placeholder {
+              color: lightgray;
+            }
+          }
+        }
+      }
+      .userChat {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #2f2d52;
+        }
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
+        .userChatInfo {
+          span {
+            font-size: 18px;
+            font-weight: 500;
+          }
+          p {
+            font-style: 14px;
+            color: lightgray;
+          }
+        }
+      }
     }
     .chat {
       flex: 2;
+
+      .chatInfo {
+        height: 50px;
+        background-color: #5d5b8d;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        color: lightgray;
+      }
+
+      .chatIcons {
+        display: flex;
+        gap: 10px;
+
+        img {
+          height: 24px;
+          cursor: pointer;
+        }
+      }
+
+      .messages {
+        background-color: #ddddf7;
+        padding: 10px;
+        height: calc(100% - 160px);
+        overflow: scroll;
+
+        .message {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 20px;
+
+          .messageInfo {
+            display: flex;
+            flex-direction: column;
+            color: gray;
+            font-weight: 300;
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              -o-border-radius: 50%;
+            }
+          }
+          .messageContent {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            p{
+              background-color: white;
+              padding: 10px 20px;
+              border-radius: 0px 10px 10px 10px;
+              max-width: max-content;
+              -webkit-border-radius: 0px 10px 10px 10px;
+              -moz-border-radius: 0px 10px 10px 10px;
+              -ms-border-radius: 0px 10px 10px 10px;
+              -o-border-radius: 0px 10px 10px 10px;
+}
+            img {
+              width: 50%;
+            }
+          }
+
+          &.owner{
+            flex-direction: row-reverse;
+
+            .messageContent{
+              align-items: flex-end;
+              
+              p{
+                background-color: #8da4f1;
+                color: white;
+                border-radius: 10px 0px 10px 10px;
+                -webkit-border-radius: 10px 0px 10px 10px;
+                -moz-border-radius: 10px 0px 10px 10px;
+                -ms-border-radius: 10px 0px 10px 10px;
+                -o-border-radius: 10px 0px 10px 10px;
+              }
+              }
+          }
+        }
+      }
+
+      .input {
+        height: 50px;
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          color: #2f2d52;
+          font-size: 18px;
+
+          &::placeholder {
+            color: lightgray;
+          }
+        }
+        .send {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            height: 24px;
+            cursor: pointer;
+          }
+          button {
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            background-color: #8da4f1;
+          }
+        }
+      }
     }
   }
 }
